@@ -1,0 +1,65 @@
+{
+  "name": "nxt-team-task-tracker-app",
+  "version": "1.0.0",
+  "description": "REST API for nxt team task management",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src",
+    "db:migrate": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "db:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "helmet": "^7.1.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "rate-limit-redis": "^4.2.0",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.9",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.57.0",
+    "prisma": "^5.14.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "keywords": [
+    "nxt",
+    "team",
+    "task",
+    "app"
+  ],
+  "homepage": "https://github.com/Sukumar-john/nxt-team-task-app#readme",
+  "bugs": {
+    "url": "https://github.com/Sukumar-john/nxt-team-task-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sukumar-john/nxt-team-task-app.git"
+  },
+  "license": "ISC",
+  "author": "Sukumar k",
+  "type": "module"
+}
