@@ -1,0 +1,11 @@
+import {z} from 'zod';
+
+export const RegisterSchema = z.object({
+    email: z.string().email('Invalid email address').toLowerCase(),
+    password: z.string().min(8, 'Password must be at least 8 characters long').regex(/[A-Z]/, 'Password must contain at least one uppercase letter').regex(/[0-9]/, 'Password must contain at least one number').regex(/[@$!%*?^&]/, 'Password must contain at least one special character'),
+    firstName: z.string().min(3, 'First name must be at least 3 characters').max(100).trim(),
+    lastName:z.string().min(3, 'Last name must be at least 3 characters').max(100).trim(),
+    organizationSlug: z.string().min(3, 'Organization slug must be at least 3 characters').max(100).regex(/^[a-z0-9-]+$/, 'Organization slug must contain only lowercase alphanumeric characters with hyphens').trim(),
+})
+
+export type RegisterInput = z.infer<typeof RegisterSchema>
